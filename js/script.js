@@ -16,7 +16,8 @@ $('#message-form').submit(function(e) {
 const humburger = document.querySelector('.humburger'),
       menu = document.querySelector(".menu"),
       closeElem = document.querySelector(".menu__close"),
-      element = document.querySelector('.scroll-bar');
+      element = document.querySelector('.scroll-bar'),
+      backgr = document.querySelector('.promo');
 
 let links = document.getElementsByTagName('a');
 
@@ -62,11 +63,11 @@ $(window).scroll(function(){
     if ($(this).scrollTop() > 1100) {
         $('.scroll-bar').fadeIn();
         element.addEventListener('click', () =>{
-        element.classList.add('animate__animated', 'animate__backOutUp');
+        element.classList.add('animate__animated', 'animate__fadeOutUpBig');
     })
     } else if (($(this).scrollTop() == 0)) {
-        $('.scroll-bar').fadeOut(1);
-        element.classList.remove('animate__animated', 'animate__backOutUp');
+        $('.scroll-bar').fadeOut();
+        element.classList.remove('animate__animated', 'animate__fadeOutUpBig');
     }
   });
   
@@ -74,5 +75,93 @@ $(window).scroll(function(){
 //   element.addEventListener('click', () =>{
 //     element.classList.add('animate__animated', 'animate__backOutUp');
 // })
+
+// Dark theme
+const html = document.querySelector('html'),
+    rootStyles = getComputedStyle(html),
+    theme = document.querySelector('.theme'),
+    theme2 = document.querySelector('.theme__btn');
+
+document.querySelector('.theme').addEventListener('click', () => {
+    html.style.setProperty('--main-color', '#006212'),
+    html.style.setProperty('--main-colorm', '#373737'),
+    html.style.setProperty('--text-black', '#f4f4f4'),
+    backgr.classList.add('promo__active'),
+    theme.classList.add('theme-active'),
+    theme2.classList.add('theme__btn-active'),
+    html.style.setProperty('--bg-white', '#111'),
+    html.style.setProperty('--bg-wsecond', 'lightskyblue'),
+    theme.addEventListener('click', () =>{
+        html.style.setProperty('--main-color', '#FFA501'),
+        html.style.setProperty('--main-colorm', '#FFA501'),
+        html.style.setProperty('--text-black', '#000000'),
+        backgr.classList.remove('promo__active'),
+        theme.classList.remove('theme-active'),
+        theme2.classList.remove('theme__btn-active'),
+        html.style.setProperty('--bg-white', "#fff"),
+        html.style.setProperty('--bg-wsecond', '#fff'),
+        theme.addEventListener('click', () =>{
+            html.style.setProperty('--main-color', '#006212'),
+            html.style.setProperty('--main-colorm', '#373737'),
+            html.style.setProperty('--text-black', '#f4f4f4'),
+            backgr.classList.add('promo__active'),
+            theme.classList.add('theme-active'),
+            theme2.classList.add('theme__btn-active'),
+            html.style.setProperty('--bg-white', '#111'),
+            html.style.setProperty('--bg-wsecond', 'lightskyblue'),
+            theme.addEventListener('click', () =>{
+                html.style.setProperty('--main-color', '#FFA501'),
+                html.style.setProperty('--main-colorm', '#FFA501'),
+                html.style.setProperty('--text-black', '#000000'),
+                backgr.classList.remove('promo__active'),
+                theme.classList.remove('theme-active'),
+                theme2.classList.remove('theme__btn-active'),
+                html.style.setProperty('--bg-white', "#fff"),
+                html.style.setProperty('--bg-wsecond', '#fff'),
+                theme.addEventListener('click', () =>{
+                    html.style.setProperty('--main-color', '#006212'),
+                    html.style.setProperty('--main-colorm', '#373737'),
+                    html.style.setProperty('--text-black', '#f4f4f4'),
+                    backgr.classList.add('promo__active'),
+                    theme.classList.add('theme-active'),
+                    theme2.classList.add('theme__btn-active'),
+                    html.style.setProperty('--bg-white', '#111'),
+                    html.style.setProperty('--bg-wsecond', 'lightskyblue'),
+                    theme.addEventListener('click', () =>{
+                        html.style.setProperty('--main-color', '#FFA501'),
+                        html.style.setProperty('--main-colorm', '#FFA501'),
+                        html.style.setProperty('--text-black', '#000000'),
+                        backgr.classList.remove('promo__active'),
+                        theme.classList.remove('theme-active'),
+                        theme2.classList.remove('theme__btn-active'),
+                        html.style.setProperty('--bg-white', "#fff"),
+                        html.style.setProperty('--bg-wsecond', '#fff'),
+                        theme.addEventListener('click', () =>{
+                            html.style.setProperty('--main-color', '#006212'),
+                            html.style.setProperty('--main-colorm', '#373737'),
+                            html.style.setProperty('--text-black', '#f4f4f4'),
+                            backgr.classList.add('promo__active'),
+                            theme.classList.add('theme-active'),
+                            theme2.classList.add('theme__btn-active'),
+                            html.style.setProperty('--bg-white', '#111'),
+                            html.style.setProperty('--bg-wsecond', 'lightskyblue'),
+                            theme.addEventListener('click', () =>{
+                                html.style.setProperty('--main-color', '#FFA501'),
+                                html.style.setProperty('--main-colorm', '#FFA501'),
+                                html.style.setProperty('--text-black', '#000000'),
+                                backgr.classList.remove('promo__active'),
+                                theme.classList.remove('theme-active'),
+                                theme2.classList.remove('theme__btn-active'),
+                                html.style.setProperty('--bg-white', "#fff"),
+                                html.style.setProperty('--bg-wsecond', '#fff');
+                            });
+                        });
+                    });
+                });
+            });
+        });
+    });  
+});
+
 
 new WOW().init();
