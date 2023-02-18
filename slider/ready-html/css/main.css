@@ -117,3 +117,17 @@ body, html{
 .descriprion.hidden p{
     transform: translateY(2vh);
 }
+
+@media (max-width: 680px) {
+    .descriprion{
+        left: 5vw;
+        max-width: 15vw;
+    }
+}
+
+@media (max-width: 544px) {
+    .descriprion{
+        left: 5vw;
+        max-width: 24vw;
+    }
+}
